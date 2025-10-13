@@ -6,6 +6,7 @@
     <title>इटखेडा </title>
     <meta name="description" content="रायगड जिल्हा परिषद | पंचायत समिती मुरुड अंतर्गत">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,52 +20,59 @@
         </div>
     </div>
 
+    
     <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="nav-logo">ITHAKAD.ORG</div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span class="hamburger"></span>
-            </button>
+     <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">ग्रामपंचायत</a>
 
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">मुख्यपृष्ठ</a></li>
-                <li class="dropdown">
-                    <a href="villageinfo.html"> गावाची माहिती </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#services">उपक्रम / सेवा </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#downloads">डाफकर्स </a>
-                </li>
-                <li><a href="#home">member</a></li>
-                <li class="dropdown">
-            </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
 
-            <div class="nav-social">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </nav>
+      <ul class="nav-menu" id="menu">
+        <li><a href="index.html"> मुखपृष्ठ</a></li>
+        <li><a href="members.html"> पदाधिकारी</a></li>
+        <li><a href="villageinfo.html"> गावाची माहिती</a></li>
+        <li><a href="impnumbers.html"> महत्वाचे नंबर</a></li>
+
+        <li class="dropdown">
+          <a href="yojna.html"> शासकीय योजना ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="yojna.html">१५ वित्त आयोग</a></li>
+            <li><a href="jaljeevan.html">जल जीवन मिशन</a></li>
+            <li><a href="pmawas.html">प्रधान मंत्री आवास योजना</a></li>
+            <li><a href="nrega.html">महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a></li>
+            <li><a href="tanda_vasti.html">तांडा/वस्ती योजना</a></li>
+            <li><a href="sc_st_development.html">अनुसूचीत जाती व नवबौध्द विकास</a></li>
+            <li><a href="ramaiawas.html">रमाई आवास योजना</a></li>
+            <li><a href="shabriawas.html">शबरी आदिवासी घरकुल योजना</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-social">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+    <!-- End Navigation -->
 
 
     <!-- Team Section -->
