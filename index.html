@@ -364,13 +364,15 @@
                     </div>
                 </div>
                 
+
 <!-- Popup -->
 <div id="popup" class="popup">
   <div class="popup-content">
     <button id="closePopup" class="close-btn">&times;</button>
-    <img src="img\popup[1].jpg" alt="Welcome Image">
+    <img src="img/popup[1].jpg" alt="Welcome Image">
   </div>
 </div>
+
 
 <script>
   const popup = document.getElementById("popup");
@@ -446,9 +448,33 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <script src="script.js">
-     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }</script>
+    <script >
+    
+  
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closePopup");
+
+  // Show popup when the page loads
+  window.addEventListener("load", () => {
+    popup.classList.add("show");
+  });
+
+  // Close popup on button click
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
+
+  // Close popup if user clicks outside the content
+  popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+      popup.classList.remove("show");
+    }
+  });
+ function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+
+  }
+</script>
 </body>
 </html>
