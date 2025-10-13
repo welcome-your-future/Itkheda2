@@ -759,6 +759,17 @@ body {
   background: #64748b;
 } /* Responsive Design */
 @media (max-width: 968px) {
+    .hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/img/img.png")
+      center/cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -800,6 +811,17 @@ body {
   }
 }
 @media (max-width: 600px) {
+    .hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/img/img.png")
+      center/cover;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
   .hero-title {
     font-size: 28px;
   }
