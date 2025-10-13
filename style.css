@@ -825,6 +825,16 @@ body {
   }
 }
 
+.team-member-avatar img {
+    width: 116px;       /* Set a fixed width */
+    height: 108px;      /* Set a fixed height */
+    object-fit: cover;  /* Maintain aspect ratio, crop if necessary */
+    border-radius: 50%; /* Make it circular */
+    display: block;
+    margin: 0 auto 10px auto; /* Center the image and add bottom spacing */
+}
+
+
 /* Dropdown Menu Custom */
 .navbar-custom .dropdown-menu-custom {
   background: linear-gradient(135deg, #c55a11 0%, #d97a35 100%);
