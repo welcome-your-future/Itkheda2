@@ -354,6 +354,33 @@
                     </div>
                 </div>
                 
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <button id="closePopup" class="close-btn">&times;</button>
+    <img src="img\popup[1].jpg" alt="Welcome Image">
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closePopup");
+
+  // Show popup when page loads
+  window.addEventListener("load", function() {
+    popup.classList.add("show");
+  });
+
+  // Close popup on button click
+  closeBtn.addEventListener("click", function() {
+    popup.style.display = "none"; // Hide the popup
+  });
+</script>
+
+
+
+
+
                 <div class="footer-column">
                     <h3 class="footer-subheading">कार्यालयीन पत्ता</h3>
                     <div class="address-content">
