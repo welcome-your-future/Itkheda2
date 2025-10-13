@@ -10,19 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-  
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-   
 </head>
 <body>
 
@@ -33,85 +20,60 @@
         </div>
     </div>
 
+    
     <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="#">इटखेडा/Itkheda</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+     <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">ग्रामपंचायत</a>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> मुखपृष्ठ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="members.html"><i class="fas fa-users"></i> पदाधिकारी</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="villageinfo.html"><i class="fas fa-info-circle"></i> गावाची माहिती</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="impnumbers.html"><i class="fas fa-phone-alt"></i> महत्वाचे नंबर</a>
-          </li>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
 
-          <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-             
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              onclick="window.location=this.getAttribute('href');"
-            >
-              <i class="fas fa-project-diagram"></i> शासकीय योजना
-            </a>
-            <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item dropdown-item-custom" href="yojna.html">१५ वित्त आयोग</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="jaljeevan.html">जल जीवन मिशन</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="pmawas.html">प्रधान मंत्री आवास योजना</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="nrega.html">महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="tanda_vasti.html">तांडा/वस्ती योजना</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="sc_st_development.html">अनुसूचीत जाती व नवबौध्द विकास</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="ramaiawas.html">रमाई आवास योजना</a></li>
-              <li><a class="dropdown-item dropdown-item-custom" href="shabriawas.html">शबरी आदिवासी घरकुल योजना</a></li>
-            </ul>
-          </li>
-        </ul>
+      <ul class="nav-menu" id="menu">
+        <li><a href="index.html"> मुखपृष्ठ</a></li>
+        <li><a href="members.html"> पदाधिकारी</a></li>
+        <li><a href="villageinfo.html"> गावाची माहिती</a></li>
+        <li><a href="impnumbers.html"> महत्वाचे नंबर</a></li>
 
-        <!-- Social Icons -->
-        <div class="nav-social">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-          </a>
-        </div>
+        <li class="dropdown">
+          <a href="yojna.html"> शासकीय योजना ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="yojna.html">१५ वित्त आयोग</a></li>
+            <li><a href="jaljeevan.html">जल जीवन मिशन</a></li>
+            <li><a href="pmawas.html">प्रधान मंत्री आवास योजना</a></li>
+            <li><a href="nrega.html">महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a></li>
+            <li><a href="tanda_vasti.html">तांडा/वस्ती योजना</a></li>
+            <li><a href="sc_st_development.html">अनुसूचीत जाती व नवबौध्द विकास</a></li>
+            <li><a href="ramaiawas.html">रमाई आवास योजना</a></li>
+            <li><a href="shabriawas.html">शबरी आदिवासी घरकुल योजना</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="nav-social">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
   </nav>
+
     <!-- End Navigation -->
+
 
     <!-- Team Section -->
     <section class="team-section">
@@ -219,6 +181,7 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -263,7 +226,9 @@
                         </a>
                     </div>
                 </div>
-                
+
+
+
 
 
 
@@ -291,13 +256,19 @@
                     <div class="visitor-counter">
                         <p class="counter-label">Visitors</p>
                         <div class="counter-display">00032</div>
-                        
                     </div>
                 </div>
             </div>
             
-            <div class="map-container">
-                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5619.566002716818!2d75.30009979999998!3d19.8444894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb98e35b72bbb3%3A0xa7e8af26561063ab!2sItkheda%2C%20Chhatrapati%20Sambhajinagar%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1760365721204!5m2!1sen!2sin" width="400" height="300" style="border:0; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+            <div class="footer-logo">
+                <div class="footer-seal">
+                    <div class="seal-circle-footer">
+                        <div class="seal-inner-footer">
+                            <div class="seal-text-footer"></div>
+                            <div class="seal-subtext-footer">ग्रामपंचायत</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="footer-bottom">
@@ -316,43 +287,6 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <script >
-    
-  
-   const popup = document.getElementById("popup");
-  const closeBtn = document.getElementById("closePopup");
-
-  // Show popup when page loads
-  window.addEventListener("load", function() {
-    popup.classList.add("show");
-  });
-
-  // Close popup on button click
-  closeBtn.addEventListener("click", function() {
-    popup.style.display = "none"; // Hide the popup
-  });
-  const popup = document.getElementById("popup");
-  const closeBtn = document.getElementById("closePopup");
-
-  // Show popup when the page loads
-  window.addEventListener("load", () => {
-    popup.classList.add("show");
-  });
-
-  // Close popup on button click
-  closeBtn.addEventListener("click", () => {
-    popup.classList.remove("show");
-  });
-
-  // Close popup if user clicks outside the content
-  popup.addEventListener("click", (event) => {
-    if (event.target === popup) {
-      popup.classList.remove("show");
-    }
-  });
- 
-  
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
