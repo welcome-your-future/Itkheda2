@@ -7,491 +7,748 @@
     <meta name="description" content="रायगड जिल्हा परिषद | पंचायत समिती मुरुड अंतर्गत">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Navbar.css">
-    <link rel="stylesheet" href="css/members.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-  
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-   
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+        /* INLINE CSS FOR TEAM SECTION AND NEW CONTENT */
+        /* --- Team Section Styles (from original members.css content) --- */
+        .team-section {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+
+        .team-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-title {
+            font-size: 2.2rem;
+            color: #007bff; /* Blue for emphasis */
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .team-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #007bff;
+            margin-bottom: 15px;
+        }
+
+        .team-member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            font-size: 1rem;
+            color: #007bff;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .call-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: #28a745; /* Green */
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .call-button:hover {
+            background-color: #218838;
+            color: white;
+        }
+
+        .call-button i {
+            margin-right: 8px;
+        }
+
+        /* --- Hero Section Styles (WITH BACKGROUND ANIMATION) --- */
+        .hero-section {
+            /* Initial Gradient Setup */
+            background: linear-gradient(135deg, #ffee04 0%, #000000 50%, #ffee04 100%);
+            background-size: 400% 400%; /* Make the gradient larger than the container */
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            overflow: hidden;
+
+            /* Apply the background animation */
+            animation: WavingOcean 15s ease infinite;
+        }
+
+        .hero-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /* Text Animation */
+            animation: slideInDown 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            /* Text Animation */
+            animation: fadeIn 2s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            background-color: #ffc107; /* Yellow */
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s;
+            display: inline-block;
+            /* Text Animation */
+            animation: popIn 0.8s ease-out 1s forwards;
+            transform: scale(0);
+        }
+
+        .cta-button:hover {
+            background-color: #e0a800;
+            transform: scale(1.05);
+        }
+
+        /* --- Other Sections --- */
+        .profile-section {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .profile-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #17a2b8; /* Cyan */
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e8f7fa; /* Light Cyan */
+            border: 1px solid #17a2b8;
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #17a2b8;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Keyframe Animations */
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* NEW: Background Animation Keyframes */
+        @keyframes WavingOcean {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Top Header -->
     <div class="top-header">
         <div class="container">
             <p class="header-text">महाराष्ट्र शासन | गोंदिया जिल्हा परिषद | पंचायत समिती अर्जुनी मोरगाव अंतर्गत</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="#">इटखेडा</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="#">इटखेडा</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> मुखपृष्ठ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="member.html"><i class="fas fa-users"></i> पदाधिकारी</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="villageinfo.html"><i class="fas fa-info-circle"></i> गावाची माहिती</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="impnumber.html"><i class="fas fa-phone-alt"></i> महत्वाचे नंबर</a>
-          </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> मुखपृष्ठ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="member.html"><i class="fas fa-users"></i> पदाधिकारी</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="villageinfo.html"><i class="fas fa-info-circle"></i> गावाची माहिती</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="impnumber.html"><i class="fas fa-phone-alt"></i> महत्वाचे नंबर</a>
+                    </li>
 
-<!-- Dropdown -->
 <li class="nav-item dropdown">
-  <a
-    class="nav-link dropdown-toggle"
-    href="#" 
-    id="navbarDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <i class="fas fa-project-diagram"></i> शासकीय योजना
-  </a>
-  <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item dropdown-item-custom" href="yojna.html">१५ वित्त आयोग</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="jaljeevan.html">जल जीवन मिशन</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="pmawas.html">प्रधान मंत्री आवास योजना</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="nrega.html">महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="tanda_vasti.html">तांडा/वस्ती योजना</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="sc_st_development.html">अनुसूचीत जाती व नवबौध्द विकास</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="ramai_awas.html">रमाई आवास योजना</a></li>
-    <li><a class="dropdown-item dropdown-item-custom" href="shabriawas.html">शबरी आदिवासी घरकुल योजना</a></li>
-  </ul>
+    <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+    >
+        <i class="fas fa-project-diagram"></i> शासकीय योजना
+    </a>
+    <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item dropdown-item-custom" href="yojna.html">१५ वित्त आयोग</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="jaljeevan.html">जल जीवन मिशन</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="pmawas.html">प्रधान मंत्री आवास योजना</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="nrega.html">महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="tanda_vasti.html">तांडा/वस्ती योजना</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="sc_st_development.html">अनुसूचीत जाती व नवबौध्द विकास</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="ramai_awas.html">रमाई आवास योजना</a></li>
+        <li><a class="dropdown-item dropdown-item-custom" href="shabriawas.html">शबरी आदिवासी घरकुल योजना</a></li>
+    </ul>
 </li>
 
-        </ul>
+                </ul>
 
-        <!-- Social Icons -->
-        <div class="nav-social">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-          </a>
+                <div class="nav-social">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="mailto:itkhedagp@gmail.com" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-    <!-- End Navigation -->
-    <!-- Team Section -->
-<section class="team-section">
-  <div class="team-container">
-    <h2 class="team-title">ग्रामपंचायत पदाधिकारी व कर्मचारी</h2>
-    <p class="team-subtitle">
-      आपल्या गावाच्या विकासासाठी सदैव सज्ज असणारे आपल्या ग्रामपंचायतीचे लोकप्रतिनिधी आणि शासकीय कर्मचारी
-    </p>
+    </nav>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h2>ग्रामपंचायतीच्या नवीन वेबसाइटवर आपले स्वागत आहे!</h2>
+                <p>
+                    ग्रामीण विकासाला गती देण्यासाठी आणि नागरिकांना सर्व माहिती एकाच ठिकाणी देण्यासाठी ग्रामपंचायत इटखेडाने हे नवीन पाऊल उचलले आहे.
+                    आपल्या समस्या आणि सूचनांचे स्वागत आहे.
+                </p>
+                <a href="impnumber.html" class="cta-button">
+                    महत्त्वाचे संपर्क क्रमांक पहा <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
 
-    <div class="team-grid">
+        <section class="profile-section">
+            <div class="team-container">
+                <h2 class="profile-title">एक दृष्टिक्षेप: इटखेडा गावाची माहिती</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="value">२५००+</div>
+                        <div class="label">एकूण लोकसंख्या (Approx)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">३५०</div>
+                        <div class="label">घरे/कुटुंब संख्या</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">८५%</div>
+                        <div class="label">साक्षरता दर (Approx)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value">१२</div>
+                        <div class="label">शासकीय योजना सक्रिय</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- 1. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/Sarpanch.jpg" alt="श्री.आशिर्वाद सुभाष लांडगे" />
-          </div>
-          <h3 class="member-name">श्री.आशिर्वाद सुभाष लांडगे</h3>
-          <p class="member-position">सरपंच </p>
-          <a href="tel:+919765256605" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+        <section class="team-section">
+            <div class="team-container">
+                <h2 class="team-title">ग्रामपंचायत पदाधिकारी व कर्मचारी</h2>
+                <p class="team-subtitle">
+                    आपल्या गावाच्या विकासासाठी सदैव सज्ज असणारे आपल्या ग्रामपंचायतीचे लोकप्रतिनिधी आणि शासकीय कर्मचारी
+                </p>
 
-      <!-- 2. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/Sarpanch.jpg" alt="श्री आशिर्वाद सुभाष लांडगे" />
-          </div>
-          <h3 class="member-name">श्री आशिर्वाद सुभाष लांडगे</h3>
-          <p class="member-position">उपसरपंच </p>
-          <a href="tel:+919272717080" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                <div class="team-grid">
 
-      <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/rk.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री राजेंद्र काशीराम भांडारकर</h3>
-          <p class="member-position">ग्रामपंचायत अधिकारी</p>
-          <a href="tel:+919637885584" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/Sarpanch.jpg" alt="श्री.आशिर्वाद सुभाष लांडगे" />
+                            </div>
+                            <h3 class="member-name">श्री.आशिर्वाद सुभाष लांडगे</h3>
+                            <p class="member-position">सरपंच </p>
+                            <a href="tel:+919765256605" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
-      <!-- 5. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/sanjay.jpg" alt="श्री.संजय नामदेव कांबळी " />
-          </div>
-          <h3 class="member-name">श्री.संजय नामदेव कांबळी </h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+919511703527" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/Sarpanch.jpg" alt="श्री आशिर्वाद सुभाष लांडगे" />
+                            </div>
+                            <h3 class="member-name">श्री आशिर्वाद सुभाष लांडगे</h3>
+                            <p class="member-position">उपसरपंच </p>
+                            <a href="tel:+919272717080" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/rk.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
+                            </div>
+                            <h3 class="member-name">श्री राजेंद्र काशीराम भांडारकर</h3>
+                            <p class="member-position">ग्रामपंचायत अधिकारी</p>
+                            <a href="tel:+919637885584" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
-
-            <!-- 6. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/ram.jpg" alt="श्री.सचिन गुरुदेव लांजेवार
-" />
-          </div>
-          <h3 class="member-name">श्री रमेश विश्वनाथ कुंभरे</h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+918390497617" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-
-
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/ujwala.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ उज्वला समिर गोंडाणे  </h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+919322159524" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-
-
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/varsha.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ वर्षा नितेशकुमार कावळे </h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/sanjay.jpg" alt="श्री.संजय नामदेव कांबळी " />
+                            </div>
+                            <h3 class="member-name">श्री.संजय नामदेव कांबळी </h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+919511703527" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
 
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/sima.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ सिमा गिरीश कोटरंगे </h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/ram.jpg" alt="श्री रमेश विश्वनाथ कुंभरे" />
+                            </div>
+                            <h3 class="member-name">श्री रमेश विश्वनाथ कुंभरे</h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+918390497617" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
 
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/maya.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ माया नत्त्यू धांडे </h3>
-          <p class="member-position">सदस्य</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
- 
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/ujwala.jpg" alt="सौ उज्वला समिर गोंडाणे" />
+                            </div>
+                            <h3 class="member-name">सौ उज्वला समिर गोंडाणे  </h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+919322159524" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/shobha.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्रीमती शोभाबाई माणिक मडावी</h3>
-          <p class="member-position">शिपाई</p>
-          <a href="tel:+919545492375" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-      
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/shree.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री श्रीकांत आनंदराव ठाकरे</h3>
-          <p class="member-position">पा.पु. कर्मचारी</p>
-          <a href="tel:+919765269168" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
 
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/anand.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री आनंदराव काशीराम मेहंदळे</h3>
-          <p class="member-position">ग्राम रोजगार सहाय्यक</p>
-          <a href="tel:+918411035023" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/varsha.jpg" alt="सौ वर्षा नितेशकुमार कावळे" />
+                            </div>
+                            <h3 class="member-name">सौ वर्षा नितेशकुमार कावळे </h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/hemant.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री हेमंतकुमार रमेश मिसार</h3>
-          <p class="member-position">संगणक परिचालक</p>
-          <a href="tel:+918698954117" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/selo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">कु. एस. जे. सेलोकर </h3>
-          <p class="member-position">समुदाय आरोग्य अधिकारी (CHO)</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री विनोद राउत </h3>
-          <p class="member-position">ग्राम म्हसूल अधिकारी (तलाठी )</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-            <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री माणिक डोंगरवार  </h3>
-          <p class="member-position">कृषी सहायक</p>
-          <a href="tel:+918806025326" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
 
-   <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/bom.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री जी. आर. बोनमपेल्लीवार</h3>
-          <p class="member-position">आरोग्य सेवक</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-      </div>
-        <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/tru.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">कु. टी. पी. खंडाईत </h3>
-          <p class="member-position">आरोग्य सेविका</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 4. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/ranj.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ रंजना उमेश राजगडे </h3>
-          <p class="member-position">आशा सेविका </p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/ush.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ उषा जयगोपाल मडावी  </h3>
-          <p class="member-position">आशा सेविका </p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">विविध सेवा सहकारी सोसायटी इटखेडा </h3>
-          <p class="member-position">रेशनदुकानदार  </p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-    </div>
-  
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">उद्धव सीताराम मेहंदळे  </h3>
-          <p class="member-position">रेशनदुकानदार</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">श्री विकासजी तुकाराम लांडगे</h3>
-          <p class="member-position">पोलीस पाटील</p>
-          <a href="tel:+91800704868" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ इंदुबाई नंदकुमार अनवले 
- </h3>
-          <p class="member-position"> अंगणवाडी   सेविका</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-         <!-- 3. ग्रामसेवक -->
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ ममता संजय मैंद 
- </h3>
-          <p class="member-position"> अंगणवाडी   सेविका</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-      <div class="team-card">
-        <div class="team-card-content">
-          <div class="team-member-avatar">
-            <img src="img/no_photo.jpg" alt="श्री राजेंद्र काशीराम भांडारकर" />
-          </div>
-          <h3 class="member-name">सौ लोपा संजय कांबळी  
- </h3>
-          <p class="member-position"> अंगणवाडी   सेविका</p>
-          <a href="tel:+91" class="call-button">
-            <i class="fa-solid fa-phone"></i> कॉल करा
-          </a>
-        </div>
-        </div>
-</section>
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/sima.jpg" alt="सौ सिमा गिरीश कोटरंगे" />
+                            </div>
+                            <h3 class="member-name">सौ सिमा गिरीश कोटरंगे </h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
 
-    <!-- Footer -->
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/maya.jpg" alt="सौ माया नत्त्यू धांडे" />
+                            </div>
+                            <h3 class="member-name">सौ माया नत्त्यू धांडे </h3>
+                            <p class="member-position">सदस्य</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/shobha.jpg" alt="श्रीमती शोभाबाई माणिक मडावी" />
+                            </div>
+                            <h3 class="member-name">श्रीमती शोभाबाई माणिक मडावी</h3>
+                            <p class="member-position">शिपाई</p>
+                            <a href="tel:+919545492375" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/shree.jpg" alt="श्री श्रीकांत आनंदराव ठाकरे" />
+                            </div>
+                            <h3 class="member-name">श्री श्रीकांत आनंदराव ठाकरे</h3>
+                            <p class="member-position">पा.पु. कर्मचारी</p>
+                            <a href="tel:+919765269168" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/anand.jpg" alt="श्री आनंदराव काशीराम मेहंदळे" />
+                            </div>
+                            <h3 class="member-name">श्री आनंदराव काशीराम मेहंदळे</h3>
+                            <p class="member-position">ग्राम रोजगार सहाय्यक</p>
+                            <a href="tel:+918411035023" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/hemant.jpg" alt="श्री हेमंतकुमार रमेश मिसार" />
+                            </div>
+                            <h3 class="member-name">श्री हेमंतकुमार रमेश मिसार</h3>
+                            <p class="member-position">संगणक परिचालक</p>
+                            <a href="tel:+918698954117" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/selo.jpg" alt="कु. एस. जे. सेलोकर" />
+                            </div>
+                            <h3 class="member-name">कु. एस. जे. सेलोकर </h3>
+                            <p class="member-position">समुदाय आरोग्य अधिकारी (CHO)</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="श्री विनोद राउत" />
+                            </div>
+                            <h3 class="member-name">श्री विनोद राउत </h3>
+                            <p class="member-position">ग्राम म्हसूल अधिकारी (तलाठी )</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="श्री माणिक डोंगरवार" />
+                            </div>
+                            <h3 class="member-name">श्री माणिक डोंगरवार  </h3>
+                            <p class="member-position">कृषी सहायक</p>
+                            <a href="tel:+918806025326" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/bom.jpg" alt="श्री जी. आर. बोनमपेल्लीवार" />
+                            </div>
+                            <h3 class="member-name">श्री जी. आर. बोनमपेल्लीवार</h3>
+                            <p class="member-position">आरोग्य सेवक</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/tru.jpg" alt="कु. टी. पी. खंडाईत" />
+                            </div>
+                            <h3 class="member-name">कु. टी. पी. खंडाईत </h3>
+                            <p class="member-position">आरोग्य सेविका</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/ranj.jpg" alt="सौ रंजना उमेश राजगडे" />
+                            </div>
+                            <h3 class="member-name">सौ रंजना उमेश राजगडे </h3>
+                            <p class="member-position">आशा सेविका </p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/ush.jpg" alt="सौ उषा जयगोपाल मडावी" />
+                            </div>
+                            <h3 class="member-name">सौ उषा जयगोपाल मडावी  </h3>
+                            <p class="member-position">आशा सेविका </p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="विविध सेवा सहकारी सोसायटी इटखेडा" />
+                            </div>
+                            <h3 class="member-name">विविध सेवा सहकारी सोसायटी इटखेडा </h3>
+                            <p class="member-position">रेशनदुकानदार  </p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="उद्धव सीताराम मेहंदळे" />
+                            </div>
+                            <h3 class="member-name">उद्धव सीताराम मेहंदळे  </h3>
+                            <p class="member-position">रेशनदुकानदार</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="श्री विकासजी तुकाराम लांडगे" />
+                            </div>
+                            <h3 class="member-name">श्री विकासजी तुकाराम लांडगे</h3>
+                            <p class="member-position">पोलीस पाटील</p>
+                            <a href="tel:+91800704868" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="सौ इंदुबाई नंदकुमार अनवले" />
+                            </div>
+                            <h3 class="member-name">सौ इंदुबाई नंदकुमार अनवले
+                            </h3>
+                            <p class="member-position"> अंगणवाडी   सेविका</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="सौ ममता संजय मैंद" />
+                            </div>
+                            <h3 class="member-name">सौ ममता संजय मैंद
+                            </h3>
+                            <p class="member-position"> अंगणवाडी   सेविका</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-content">
+                            <div class="team-member-avatar">
+                                <img src="img/no_photo.jpg" alt="सौ लोपा संजय कांबळी" />
+                            </div>
+                            <h3 class="member-name">सौ लोपा संजय कांबळी  
+                            </h3>
+                            <p class="member-position"> अंगणवाडी   सेविका</p>
+                            <a href="tel:+91" class="call-button">
+                                <i class="fa-solid fa-phone"></i> कॉल करा
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3 class="footer-heading">ग्रुप ग्रामपंचायत  इटखेडा </h3>
+                    <h3 class="footer-heading">ग्रुप ग्रामपंचायत  इटखेडा </h3>
                     <p class="footer-subheading">संपर्क</p>
                     <div class="footer-contact">
                         <div class="contact-item">
@@ -508,7 +765,7 @@
                             <a href="mailto:itkhedagp@gmail.com">itkhedagp@gmail.com</a>
                         </div>
                     </div>
-                    
+
                     <div class="footer-social">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -530,7 +787,6 @@
                         </a>
                     </div>
                 </div>
-                
 
 
 
@@ -544,7 +800,7 @@
                         <p>मु.  इटखेडा , ता. अर्जुनी मोरगाव , जि.  गोंदिया, महाराष्ट्र 441701</p>
                     </div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3 class="footer-subheading">कार्यालयीन वेळ</h3>
                     <div class="office-hours">
@@ -554,7 +810,7 @@
                         </svg>
                         <p>सकाळी ९.३० ते सायं. ५.४५<br>(शनिवार रविवार आणि सुट्टी वगळून)</p>
                     </div>
-                    
+
                     <div class="visitor-counter">
                         <p class="counter-label">Visitors</p>
                         <div class="counter-display">02000</div>
@@ -562,43 +818,43 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="map-container">
-                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5619.566002716818!2d75.30009979999998!3d19.8444894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb98e35b72bbb3%3A0xa7e8af26561063ab!2sItkheda%2C%20Chhatrapati%20Sambhajinagar%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1760365721204!5m2!1sen!2sin" width="400" height="300" style="border:0; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5619.566002716818!2d75.30009979999998!3d19.8444894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb98e35b72bbb3%3A0xa7e8af26561063ab!2sItkheda%2C%20Chhatrapati%20Sambhajinagar%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1760365721204!5m2!1sen!2sin" width="400" height="300" style="border:0; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>© 2025. All rights reserved by Group Grampanchayat  | Designed by Greenearth Solution, Murud- Janjira | 9822494560</p>
+                <p>© 2025. All rights reserved by Group Grampanchayat  | Designed by Greenearth Solution, Murud- Janjira | 9822494560</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/8698954117 " class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
     </a>
 
-    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
     <script >
-    
+
 document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("popup");
     const closeBtn = document.getElementById("closePopup");
 
-    // Show popup when page loads
-    popup.classList.add("show");
+    // Show popup when page loads (assuming popup element is available)
+    if(popup) popup.classList.add("show");
 
-    // Close popup when button is clicked
-    closeBtn.addEventListener("click", function () {
-      popup.style.display = "none";
-    });
-  });
- 
-  
+    // Close popup when button is clicked (assuming closeBtn element is available)
+    if(closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          popup.style.display = "none";
+        });
+    }
+ });
+
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
